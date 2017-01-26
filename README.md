@@ -1,5 +1,7 @@
 # smplcnf-http
 
+[![Build Status](https://semaphoreci.com/api/v1/houseagency/smplcnf-http/branches/master/shields_badge.svg)](https://semaphoreci.com/houseagency/smplcnf-http)
+
 Promised JSON config reader with http(s) support.
 
 This module is a simple wrapper around
