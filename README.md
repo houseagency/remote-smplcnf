@@ -19,7 +19,8 @@ Example:
 	const config = simple_config();
 
 	config.load('local-defaults.conf');
-	config.remote_load('http://s3.amazonaws.com/mybucket/myconfig.json');
+	config.remote_load('http://example.org/mybucket/myconfig.json');
+	config.remote_load('s3://bucket/theconfig.json');
 
 	config('my_config_key', 'default_value')
 	.then(value => {
