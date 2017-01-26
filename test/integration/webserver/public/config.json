@@ -1,0 +1,11 @@
+{
+  "type": "testconfiguration",
+  "fruits": [
+    "banana", "apple", "organge"
+  ],
+  "names": {
+    "zlatan": "ibrahimovic",
+    "ronaldo": "nazário de lima",
+    "eric": "cantona"
+  }
+}

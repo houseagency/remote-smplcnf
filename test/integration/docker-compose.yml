@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  nodeapp:
+    build: ../..
+    links:
+      - webserver
+    depends_on:
+      webserver:
+        condition: service_healthy
+    command: node_modules/.bin/mocha -g ^Integration test/**/*.js
+  webserver:
+    build: webserver
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 1m30s
+      timeout: 7s
+      retries: 3

@@ -61,3 +61,24 @@ Use those environment variables to set your credentials:
 
 There are probably situations when you don't want this.
 
+## Tests
+
+Unit tests and integration tests are in the same file.
+Unit tests are prefixed (or wrapped) with "Unit:" and integrations tests are
+prefixeda (or wrapped) with "Integration:" in the `description()`.
+
+### Unit tests
+
+Run the unit tests:
+
+	npm test
+
+### Integration tests
+
+Requires docker-compose version 1.10.0 or later, and docker (only tested with
+docker version 1.12.1).
+
+Run the interation tests:
+
+	npm run integrationtests
+
