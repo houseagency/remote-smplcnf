@@ -1,6 +1,6 @@
 # remote-smplcnf
 
-[![Build Status](https://semaphoreci.com/api/v1/houseagency/smplcnf-http/branches/master/shields_badge.svg)](https://semaphoreci.com/houseagency/smplcnf-http)
+[![Build Status](https://semaphoreci.com/api/v1/houseagency/remote-smplcnf/branches/master/shields_badge.svg)](https://semaphoreci.com/houseagency/remote-smplcnf)
 
 Promised JSON config reader with support for loading configurations from remote
 (http and aws s3).
