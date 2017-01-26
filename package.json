@@ -1,0 +1,28 @@
+{
+  "name": "smplcnf-http",
+  "version": "1.0.0",
+  "description": "Promised JSON config reader with HTTP(S) support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houseagency/smplcnf-http.git"
+  },
+  "author": "Alfred Godoy <alfred.godoy@houseagency.se>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/houseagency/smplcnf-http/issues"
+  },
+  "dependencies": {
+    "axios": "0.15.3",
+    "smplcnf": "1.1.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "mocha": "3.2.0",
+    "testdouble": "1.11.0"
+  },
+  "homepage": "https://github.com/houseagency/smplcnf-http#readme"
+}
