@@ -1,11 +1,29 @@
 const axios = require('axios');
+const Promise = require('bluebird');
+const s3 = require('./s3');
 const smplcnf = require('smplcnf');
 
 function wrapper() {
 	const conf = smplcnf();
 
-	conf.http_load = function(url) {
-		return axios.get(url)
+	conf.remote_load = function(url) {
+		return Promise.try(() => {
+			let s3parts;
+			if (s3parts = /^s3:\/\/([^\/]+)(\/.*)$/.exec(url)) {
+				return s3.getObject({
+					Bucket: s3parts[1],
+					Key: s3parts[2]
+				}).promise();
+			} else {
+				return axios.get(url)
+			}
+		})
+		.then(data => {
+			if (typeof data === 'string') {
+				return JSON.parse(data);
+			}
+			return data;
+		})
 		.then(conf.set);
 	}
 

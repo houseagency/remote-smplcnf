@@ -1,5 +1,5 @@
 {
-  "name": "smplcnf-http",
+  "name": "remote-smplcnf",
   "version": "1.0.0",
   "description": "Promised JSON config reader with HTTP(S) support.",
   "main": "index.js",
@@ -16,7 +16,9 @@
     "url": "https://github.com/houseagency/smplcnf-http/issues"
   },
   "dependencies": {
+    "aws-sdk": "2.8.0",
     "axios": "0.15.3",
+    "bluebird": "3.4.7",
     "smplcnf": "1.1.0"
   },
   "devDependencies": {
