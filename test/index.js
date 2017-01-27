@@ -84,8 +84,22 @@ describe('Integration:', () => {
 				expect(names.eric).to.equal('cantona');
 			});
 		});
-
 	});
+
+	it('loads configuration using aws s3 api', () => {
+		let config = remote_smplcnf();
+		return config.remote_load('s3://houseagency/integration_tests/remote-smplcnf/config.json')
+		.then(() => {
+			return config('seagulls')
+			.then(seagulls => {
+				expect(seagulls).to.equal('follow the trawler');
+				return config('sardines');
+			})
+			.then(sardines => {
+				expect(sardines).to.equal('thrown in the sea');
+			});
+		});
+	}).timeout(5000);
 
 });
 
