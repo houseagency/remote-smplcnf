@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha -g ^Unit: test/**/*.js",
-    "integrationtests": "docker-compose -f test/integration/docker-compose.yml -p integrationtests up --abort-on-container-exit --build"
+    "integrationtests": "test/integration/run.sh"
   },
   "repository": {
     "type": "git",
