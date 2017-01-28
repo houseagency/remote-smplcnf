@@ -1,8 +1,9 @@
-//
-// This is it's own module, since we want the same s3 object in both code and
-// tests, to be able to do mocking.
-//
-
+const Promise = require('bluebird');
 const aws = require('aws-sdk');
-const s3 = new aws.S3();
+aws.config.setPromisesDependency(Promise);
+
+const s3 = new aws.S3({
+	apiVersion: '2006-03-01',
+	signatureVersion: 'v4'
+});
 module.exports = s3;

@@ -82,3 +82,10 @@ Run the interation tests:
 
 	npm run integrationtests
 
+#### AWS credentials for integration tests
+
+Pass your AWS credentials to the integration tests containers using environment
+variables:
+
+	AWS_ACCESS_KEY_ID=XXX AWS_SECRET_ACCESS_KEY=XXX npm run integrationtests
+

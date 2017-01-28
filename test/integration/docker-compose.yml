@@ -9,6 +9,9 @@ services:
       webserver:
         condition: service_healthy
     command: node_modules/.bin/mocha -g ^Integration test/**/*.js
+    environment:
+      - AWS_ACCESS_KEY_ID
+      - AWS_SECRET_ACCESS_KEY
   webserver:
     build: webserver
     healthcheck:

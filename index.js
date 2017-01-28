@@ -9,11 +9,14 @@ function wrapper() {
 	conf.remote_load = function(url) {
 		return Promise.try(() => {
 			let s3parts;
-			if (s3parts = /^s3:\/\/([^\/]+)(\/.*)$/.exec(url)) {
+			if (s3parts = /^s3:\/\/([^\/]+)\/(.*)$/.exec(url)) {
 				return s3.getObject({
 					Bucket: s3parts[1],
 					Key: s3parts[2]
-				}).promise();
+				}).promise()
+				.then(response => {
+					return response.Body.toString();
+				});
 			} else {
 				return axios.get(url)
 				.then(response => {
