@@ -6,7 +6,7 @@ Promised JSON config reader with support for loading configurations from remote
 (http and aws s3).
 
 This module is a simple wrapper around
-[smplcnf](https://github.com/spurge/smplcnf), adding a `http_load(url)`
+[smplcnf](https://github.com/spurge/smplcnf), adding a `remote_load(url)`
 function.
 
 ## How to use it
