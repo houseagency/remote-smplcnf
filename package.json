@@ -1,7 +1,7 @@
 {
   "name": "remote-smplcnf",
   "version": "1.0.0",
-  "description": "Promised JSON config reader with HTTP(S) support.",
+  "description": "Promised JSON config reader with support for S3 and http.",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha -g ^Unit: test/**/*.js",
