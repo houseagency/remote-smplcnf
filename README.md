@@ -9,6 +9,10 @@ This module is a simple wrapper around
 [smplcnf](https://github.com/spurge/smplcnf), adding a `remote_load(url)`
 function.
 
+## How to install
+
+	npm install remote-smplcnf
+
 ## How to use it
 
 See [smplcnf](https://github.com/spurge/smplcnf) for non-http usage.
