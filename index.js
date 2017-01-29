@@ -15,7 +15,7 @@ function wrapper() {
 					Key: s3parts[2]
 				}).promise()
 				.then(response => {
-					return response.Body.toString();
+					return response.Body;
 				});
 			} else {
 				return axios.get(url)
@@ -25,6 +25,9 @@ function wrapper() {
 			}
 		})
 		.then(data => {
+			if (Buffer.isBuffer(data)) {
+				data = data.toString();
+			}
 			if (typeof data === 'string') {
 				return JSON.parse(data);
 			}

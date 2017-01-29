@@ -14,8 +14,8 @@ describe('Unit:', () => {
 		};
 
 		const exampleS3Bucket = 'examplebucket';
-		const exampleS3Key = '/config.json';
-		const exampleS3Url = 's3://' + exampleS3Bucket + exampleS3Key;
+		const exampleS3Key = 'config.json';
+		const exampleS3Url = 's3://' + exampleS3Bucket + '/' + exampleS3Key;
 		const exampleS3Config = {
 			testing: "this is an aws s3 test"
 		};
@@ -29,7 +29,7 @@ describe('Unit:', () => {
 			td.when(s3.getObject({ Bucket: exampleS3Bucket, Key: exampleS3Key}))
 			.thenReturn({
 				promise: () => Promise.try(() => {
-					return exampleS3Config;
+					return { Body: new Buffer(JSON.stringify(exampleS3Config)) };
 				})
 			});
 		});
